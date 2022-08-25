@@ -12,7 +12,9 @@ The design of the pipeline can be broken down into three stages: data organisati
 
 ### 1.1 Data input
 
-The format the input data needs to be in depends on whether or not the data has been transformed. For already transformed data, the format is as follows:
+The input data format is dependent on whether or not the data has been transformed. 
+
+For already transformed data, the format is as follows:
 
 | genotype_id | traitone | traittwo | traitthree | trait... |
 | ------------- |:-------------:|:-------------:|:-------------:| -----:|
@@ -24,7 +26,15 @@ For data to be transformed, the format is as follows:
 | ------------- |:-------------:|:-------------:|:-------------:|:-------------:|:-------------:| -----:|
 | | | | | | |
 
-As standard, the pipeline for data to be transformed it assumesthat genotype_id, location and rep feature before the traits. If your data is in a different format to this, you will need to adjust the transformation stage to match using the guide in 1.2.
+As standard, the pipeline for data to be transformed it assumes that genotype_id, location and rep feature before the traits. If your data is in a different format to this, you will need to adjust the transformation stage to match using the guide in 1.2.1.
 
-### 1.2 Adjusting the transformation stage
+### 1.2.1 Transforming the data
+
+The pipeline is currently set up to run the following model as a Linear Mixed Model (LMM) on line 154 __SUBJECT TO CHANGE__: 
+
+```R
+LMMmod<-lmer(trait~(1|location)*genotype_id, data = MyDataframe)
+```
+
+#### 1.2.1 Adjusting the transformation stage
 
