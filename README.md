@@ -41,7 +41,7 @@ For already transformed data, the format is as follows:
 For data to be transformed, the format is as follows:
 
 | genotype_id | location | rep | traitone | traittwo | traitthree | traitn |
-|-|-|-|-|-|-|-|-|-|
+|-|-|-|-|-|-|-|
 
 As standard, the pipeline for data to be transformed it assumes that genotype_id, location and rep feature before the traits. If your data is in a different format to this, you will need to adjust the transformation stage to match using the guide in 1.2.
 
