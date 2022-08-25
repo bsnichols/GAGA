@@ -28,7 +28,7 @@ For data to be transformed, the format is as follows:
 
 As standard, the pipeline for data to be transformed it assumes that genotype_id, location and rep feature before the traits. If your data is in a different format to this, you will need to adjust the transformation stage to match using the guide in 1.2.
 
-### 1.2.1 Transforming the data
+### 1.2 Transforming the data
 
 The pipeline is currently set up to run the following as a Linear Mixed Model (LMM) on line 154 __SUBJECT TO CHANGE__: 
 
@@ -36,7 +36,5 @@ The pipeline is currently set up to run the following as a Linear Mixed Model (L
 LMMmod<-lmer(trait~(1|location)*genotype_id, data = MyDataframe)
 ```
 
-If your data requires a different model, replace ```trait~(1|location)*genotype_id``` with the model of your choice. If the number of columns in your input data is therefore different, replace ```colno``` with the number of columns that comes before your first trait.
-
-#### 1.2.1 Adjusting the transformation stage
+If your data requires a different model, replace ```trait~(1|location)*genotype_id``` with the model of your choice. If the number of columns in your input data is therefore different from the format in 1.1, replace ```colno``` with the number of columns that come before your first trait. For example, in the standard format there are 3 columns before the first trait and so ``colno = 3```.
 
