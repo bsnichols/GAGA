@@ -12,7 +12,7 @@ The design of the pipeline can be broken down into three stages: data organisati
 
 The pipeline runs within the folder it is stored in. To begin, place GAGA.R in the folder containing the data required by the pipeline. This should include:
 
-- the trait input data containing the traits to be run (more information on this is detailed in 1.1)
+- the trait input data, titled 'totest_' followed by the name of the data, containing the traits to be run (more information on this is detailed in 1.1)
 - data for GEM
     * rpkm_AT2018in the .txt format
     *  Marker to At_AT2018 in the .csv format
