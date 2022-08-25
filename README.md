@@ -19,7 +19,7 @@ The input data format is dependent on whether or not the data has been transform
 For already transformed data, the format is as follows:
 
 | genotype_id | traitone | traittwo | traitthree | trait... |
-| ------------- :-------------:|:-------------:|:-------------:| -----:|
+| -------------|:-------------:|:-------------:|:-------------:| -----:|
 | | | | | | |
 
 For data to be transformed, the format is as follows:
