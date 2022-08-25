@@ -12,16 +12,22 @@ The design of the pipeline can be broken down into three stages: data organisati
 
 The pipeline runs within the folder it is stored in. To begin, place GAGA.R in the folder containing the data required by the pipeline. This should include:
 
-- the trait input data, titled 'totest_' followed by the name of the data, containing the traits to be run (more information on this is detailed in 1.1)
+- the trait input data, with the prefix 'totest_', containing the traits to be run (more information on this is detailed in 1.1)
 - data for GEM
-    * rpkm_AT2018in the .txt format
-    *  Marker to At_AT2018 in the .csv format
+    * rpkm_AT2018 in the .txt format
+    * Marker to At_AT2018 in the .csv format
 - data for GWAS
-    * q matrix in the .txt format
-    * SNP file in the .hmp.txt format
+    * q matrix in the .txt format, with the prefix 'qmatrix_'
+    * SNP file in the .hmp.txt format, with the prefix 'snpfile_'
 - and data for plotting
     * DirectionsAC_AT2018 in the .tsv format
     * Ath_Mapping in the .tsv format
+
+__WHAT ARE THE OTHER FILES CALLED__
+
+Take a look at the demo data in this documentation for how to name and format your data.
+
+When you open up GAGA.R, there are three variables you will need to set. ```setwd()``` on line 10 requires you to put the path to the directory containing GAGA.R and the data files listed above. ```runstats``` needs to be set to ```TRUE``` or ```FALSE``` depending on whether or not you wish to transform your data and ```colno``` is dependent on the type of Linear Mixed Model you wish to run, should you be transformin your data. For a further explanation on ```runstats``` and ```colno```, refer to 1.1.
 
 ### 1.1 Trait input data
 
@@ -29,13 +35,13 @@ The input data format is dependent on whether or not the data has been transform
 
 For already transformed data, the format is as follows:
 
-| genotype_id | traitone | traittwo | traitthree | trait... |
+| genotype_id | traitone | traittwo | traitthree | traitn |
 | -------------|:-------------:|:-------------:|:-------------:| -----:|
 | | | | | | |
 
 For data to be transformed, the format is as follows:
 
-| genotype_id | location | rep | traitone | traittwo | traitthree | trait... |
+| genotype_id | location | rep | traitone | traittwo | traitthree | traitn |
 | ------------- |:-------------:|:-------------:|:-------------:|:-------------:|:-------------:| -----:|
 | | | | | | |
 
