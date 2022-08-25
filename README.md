@@ -14,16 +14,16 @@ The pipeline runs within the folder it is stored in. To begin, place GAGA.R in t
 
 - the input data containing the traits to be run (more information on this is detailed in 1.1)
 - data for GEM
-..* rpkm_AT2018in the .txt format
-..* Marker to At_AT2018 in the .csv format
+⋅⋅* rpkm_AT2018in the .txt format
+⋅⋅* Marker to At_AT2018 in the .csv format
 
 - data for GWAS
-..* q matrix in the .txt format
-..* SNP file in the .hmp.txt format
+⋅⋅* q matrix in the .txt format
+⋅⋅* SNP file in the .hmp.txt format
 
 - and data for plotting
-..* DirectionsAC_AT2018 in the .tsv format
-..* Ath_Mapping in the .tsv format
+⋅⋅* DirectionsAC_AT2018 in the .tsv format
+⋅⋅* Ath_Mapping in the .tsv format
 
 ### 1.1 Data input
 
