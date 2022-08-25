@@ -27,7 +27,11 @@ __WHAT ARE THE OTHER FILES CALLED__
 
 Take a look at the demo data in this documentation for how to name and format your data.
 
-When you open up GAGA.R, there are three variables you will need to set. ```setwd()``` on line 10 requires you to put the path to the directory containing GAGA.R and the data files listed above. ```runstats``` needs to be set to ```TRUE``` or ```FALSE``` depending on whether or not you wish to transform your data and ```colno``` is dependent on the type of Linear Mixed Model you wish to run, should you be transformin your data. For a further explanation on ```runstats``` and ```colno```, refer to 1.1.
+When you open up GAGA.R, there are five variables you will need to set. ```setwd()``` on line 10 requires you to put the path to the directory containing GAGA.R and the data files listed above. 
+
+```runstats``` needs to be set to ```TRUE``` or ```FALSE``` depending on whether or not you wish to transform your data and ```colno``` is dependent on the type of Linear Mixed Model you wish to run, should you be transformin your data. For a further explanation on ```runstats``` and ```colno```, refer to 1.1.
+
+```rungem``` runs the GEM analysis and ```rungwas``` runs the GWAS analysis and these need to be set to ```TRUE``` or ```FALSE``` depending on which you wish to run on your data.
 
 ### 1.1 Trait input data
 
@@ -35,12 +39,12 @@ The input data format is dependent on whether or not the data has been transform
 
 For already transformed data, the format is as follows:
 
-| genotype_id | traitone | traittwo | traitthree | traitn |
+| genotype_id | traitone | traittwo | traitthree | trait... |
 |-|-|-|-|-|
 
 For data to be transformed, the format is as follows:
 
-| genotype_id | location | rep | traitone | traittwo | traitthree | traitn |
+| genotype_id | location | rep | traitone | traittwo | traitthree | trait... |
 |-|-|-|-|-|-|-|
 
 As standard, the pipeline for data to be transformed it assumes that genotype_id, location and rep feature before the traits. If your data is in a different format to this, you will need to adjust the transformation stage to match using the guide in 1.2.
@@ -56,6 +60,8 @@ LMMmod<-lmer(trait~(1|location)*genotype_id, data = MyDataframe)
 ```
 
 If your data requires a different model, replace ```trait~(1|location)*genotype_id``` with the model of your choice. If the number of columns in your input data is therefore different from the format in 1.1, replace ```colno``` on line 12 with the number of columns that come before your first trait. For example, in the standard format there are 3 columns before the first trait and so ```colno = 3```.
+
+
 
 
 [^Woolfenden]: Woolfenden, H. (2022) ‘Pyrenopeziz Resistance project’ Github repository, doi: https://doi.org/10.5281/zenodo.6546233
