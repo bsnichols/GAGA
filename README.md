@@ -35,9 +35,8 @@ The pipeline is currently set up to run the following as a Linear Mixed Model (L
 ```R
 LMMmod<-lmer(trait~(1|location)*genotype_id, data = MyDataframe)
 ```
-.
 
-If your data requires a different model, replace ```R trait~(1|location)*genotype_id ``` with the model of your choice. If the number of columns in your input data is therefore different, replace ```R colno ``` with the number of columns that comes before your first trait.
+If your data requires a different model, replace ```trait~(1|location)*genotype_id``` with the model of your choice. If the number of columns in your input data is therefore different, replace ```colno``` with the number of columns that comes before your first trait.
 
 #### 1.2.1 Adjusting the transformation stage
 
