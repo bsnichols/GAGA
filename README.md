@@ -16,6 +16,8 @@ The format the input data needs to be in depends on whether or not the data has 
 
 | genotype_id | traitone | traittwo | traitthree | trait... |
 | ------------- |:-------------:|:-------------:|:-------------:| -----:|
+| | | | |
+
 For data to be transformed, the format is as follows:
 
 | genotype_id | location | rep | traitone | traittwo | traitthree | trait... |
