@@ -8,13 +8,13 @@ In this repo you will find the  GAGA pipeline script, demo data and the document
 
 The design of the pipeline can be broken down into three stages: data organisation, GEM analysis and GWAS analysis section. The pipeline is designed to take in either raw replicate data and transform it for analysis, or ready transformed data. The pipeline then performs a GEM analysis on the data and outputs a Manhattan plot. It then performs a GWAS using GAPIT and can be adjusted to run any of the models available in the GAPIT package. The best-fit model feature compares the results from the models run in the GWAS and outputs a Manhattan plot for the model that best fits the data. Outputs from the pipeline are organised into individual trait folders and an overview of all traits analysed is available to help quickly navigate the results.
 
-While the plotter aspect of the pipeline is currently configured for the A/C genome requirements of *Brassica napus*, this can be readily adapted for other species.
+While the GEM analysis and plotter functions of the pipeline are currently configured for the A/C genome requirements of *Brassica napus*, this can be readily adapted for other species.
 
 ## 1 Setting up
 
 The pipeline runs within the folder it is stored in. To begin, place GAGA.R in the folder containing the data required by the pipeline. This should include:
 
-- the trait input data in the .csv format, with the prefix 'totest_', containing the traits to be run (more information on this is detailed in 1.1)
+- the trait input data in the .csv format, with the prefix 'totest_', containing the traits to be run (more information on this is detailed in 2)
 - data for GWAS
     * q matrix in the .txt format, with the prefix 'qmatrix_'
     * SNP file in the .hmp.txt format, with the prefix 'snpfile_'
@@ -27,13 +27,15 @@ The pipeline runs within the folder it is stored in. To begin, place GAGA.R in t
 
 __WHAT ARE THE OTHER FILES CALLED__
 
-Take a look at the demo data in this documentation for how to name and format your data.
+Take a look at the demo data in this repo for how to name and format your data.
 
 When you open up GAGA.R, there are six variables you will need to manually set before running the pipeline. ```setwd()``` on line 10 requires you to put the path to the directory containing GAGA.R and the data files listed above. 
 
 ```runstats``` needs to be set to ```TRUE``` or ```FALSE``` depending on whether or not you wish to transform your data and ```colno``` is dependent on the type of Linear Mixed Model you wish to run, should you be transformin your data. For a further explanation on ```runstats``` and ```colno```, refer to 1.1.
 
 ```rungem``` runs the GEM analysis and ```rungwas``` runs the GWAS analysis and these need to be set to ```TRUE``` or ```FALSE``` depending on which you wish to run on your data. If you are running a GWAS, the ```gwasmodels``` should be adapted for the models you wish to run in GAPIT3[^Wang].
+
+To run the pipeline, ensure these variables are set and that the correct data files in the directory, and then the pipeline will automatically run when sourced.
 
 ## 2 Data management
 
@@ -63,10 +65,11 @@ The pipeline is currently set up to run the following as a Linear Mixed Model (L
 LMMmod<-lmer(trait~(1|location)*genotype_id, data = MyDataframe)
 ```
 
-If your data requires a different model, replace ```trait~(1|location)*genotype_id``` with the model of your choice. If the number of columns in your input data is therefore different from the format in 1.1, replace ```colno``` on line 12 with the number of columns that come before your first trait. For example, in the standard format there are 3 columns before the first trait and so ```colno = 3```.
+If your data requires a different model, replace ```trait~(1|location)*genotype_id``` with the model of your choice. If the number of columns in your input data is therefore different from the format in 2, replace ```colno``` on line 12 with the number of columns that come before your first trait. For example, in the format shown there are 3 columns (genotype_id, location and rep) before the first trait and so ```colno = 3```.
 
-## 3 Analyses 
+## 3 Changing the colours of the Manhattan plots
 
+The Manhattan plotter features twice within the code; once within the GEM analysis and once within the GWAS analysis. To change the colours of the Manhattan plots, you will need to alter ```Chrom_colors``` to the colours of your choice in both regions within the script. As standard, the Manhattan plots produce a rainbow Manhattan plot of multiple colours. 
 
 [^Wang]: Wang J., Zhang Z. (2021) ‘GAPIT Version 3: Boosting Power and Accuracy for Genomic Association and Prediction, Genomics, Proteomics & Bioinformatics’, doi: https://doi.org/10.1016/j.gpb.2021.08.005.
 [^Woolfenden]: Woolfenden, H. (2022) ‘Pyrenopeziz Resistance project’ Github repository, doi: https://doi.org/10.5281/zenodo.6546233.
