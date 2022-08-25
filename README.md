@@ -15,7 +15,7 @@ The pipeline runs within the folder it is stored in. To begin, place GAGA.R in t
 - the input data containing the traits to be run (more information on this is detailed in 1.1)
 - data for GEM
 ⋅⋅* rpkm_AT2018in the .txt format
-⋅⋅* Marker to At_AT2018 in the .csv format
+⋅⋅*  Marker to At_AT2018 in the .csv format
 
 - data for GWAS
 ⋅⋅* q matrix in the .txt format
