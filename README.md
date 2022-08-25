@@ -12,7 +12,7 @@ The design of the pipeline can be broken down into three stages: data organisati
 
 The pipeline runs within the folder it is stored in. To begin, place GAGA.R in the folder containing the data required by the pipeline. This should include:
 
-- the trait input data, with the prefix 'totest_', containing the traits to be run (more information on this is detailed in 1.1)
+- the trait input data in the .csv format, with the prefix 'totest_', containing the traits to be run (more information on this is detailed in 1.1)
 - data for GWAS
     * q matrix in the .txt format, with the prefix 'qmatrix_'
     * SNP file in the .hmp.txt format, with the prefix 'snpfile_'
@@ -36,14 +36,12 @@ The input data format is dependent on whether or not the data has been transform
 For already transformed data, the format is as follows:
 
 | genotype_id | traitone | traittwo | traitthree | traitn |
-| -------------|:-------------:|:-------------:|:-------------:| -----:|
-| | | | | | |
+...
 
 For data to be transformed, the format is as follows:
 
 | genotype_id | location | rep | traitone | traittwo | traitthree | traitn |
-| ------------- |:-------------:|:-------------:|:-------------:|:-------------:|:-------------:| -----:|
-| | | | | | |
+...
 
 As standard, the pipeline for data to be transformed it assumes that genotype_id, location and rep feature before the traits. If your data is in a different format to this, you will need to adjust the transformation stage to match using the guide in 1.2.
 
