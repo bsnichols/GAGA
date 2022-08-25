@@ -10,6 +10,8 @@ The design of the pipeline can be broken down into three stages: data organisati
 
 ## 1 Data management
 
+The pipeline runs within the folder it is stored in. To begin, place 
+
 ### 1.1 Data input
 
 The input data format is dependent on whether or not the data has been transformed. 
@@ -17,14 +19,11 @@ The input data format is dependent on whether or not the data has been transform
 For already transformed data, the format is as follows:
 
 | genotype_id | traitone | traittwo | traitthree | trait... |
-| ------------- |:-------------:|:-------------:|:-------------:| -----:|
-| | | | |
+
 
 For data to be transformed, the format is as follows:
 
 | genotype_id | location | rep | traitone | traittwo | traitthree | trait... |
-| ------------- |:-------------:|:-------------:|:-------------:|:-------------:|:-------------:| -----:|
-| | | | | | |
 
 As standard, the pipeline for data to be transformed it assumes that genotype_id, location and rep feature before the traits. If your data is in a different format to this, you will need to adjust the transformation stage to match using the guide in 1.2.
 
