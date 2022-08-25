@@ -13,13 +13,13 @@ The design of the pipeline can be broken down into three stages: data organisati
 The pipeline runs within the folder it is stored in. To begin, place GAGA.R in the folder containing the data required by the pipeline. This should include:
 
 - the trait input data, with the prefix 'totest_', containing the traits to be run (more information on this is detailed in 1.1)
-- data for GEM
-    * rpkm_AT2018 in the .txt format
-    * Marker to At_AT2018 in the .csv format
 - data for GWAS
     * q matrix in the .txt format, with the prefix 'qmatrix_'
     * SNP file in the .hmp.txt format, with the prefix 'snpfile_'
-- and data for plotting
+- data for GEM (from Woolfenden, 2022[^Woolfenden])
+    * rpkm_AT2018 in the .txt format
+    * Marker to At_AT2018 in the .csv format
+- and data for plotting (from Woolfenden, 2022[^Woolfenden])
     * DirectionsAC_AT2018 in the .tsv format
     * Ath_Mapping in the .tsv format
 
@@ -59,3 +59,5 @@ LMMmod<-lmer(trait~(1|location)*genotype_id, data = MyDataframe)
 
 If your data requires a different model, replace ```trait~(1|location)*genotype_id``` with the model of your choice. If the number of columns in your input data is therefore different from the format in 1.1, replace ```colno``` on line 12 with the number of columns that come before your first trait. For example, in the standard format there are 3 columns before the first trait and so ```colno = 3```.
 
+
+[^Woolfenden]: Woolfenden, H. (2022) ‘Pyrenopeziz Resistance project’ Github repository, doi: https://doi.org/10.5281/zenodo.6546233
