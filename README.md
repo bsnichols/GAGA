@@ -10,7 +10,7 @@ The design of the pipeline can be broken down into three stages: data organisati
 
 While the plotter aspect of the pipeline is currently configured for the A/C genome requirements of *Brassica napus*, this can be readily adapted for other species.
 
-## 1 Data management
+## 1 Setting up
 
 The pipeline runs within the folder it is stored in. To begin, place GAGA.R in the folder containing the data required by the pipeline. This should include:
 
@@ -35,7 +35,7 @@ When you open up GAGA.R, there are six variables you will need to manually set b
 
 ```rungem``` runs the GEM analysis and ```rungwas``` runs the GWAS analysis and these need to be set to ```TRUE``` or ```FALSE``` depending on which you wish to run on your data. If you are running a GWAS, the ```gwasmodels``` should be adapted for the models you wish to run in GAPIT3[^Wang].
 
-### 1.1 Trait input data
+## 2 Data management
 
 The input data format is dependent on whether or not the data has been transformed. 
 
@@ -51,9 +51,9 @@ For data to be transformed, the format is as follows:
 
 We recommend that you use lowercase letters and no numbers or symbols for your trait names.
 
-As standard, the pipeline for data to be transformed it assumes that genotype_id, location and rep feature before the traits. If your data is in a different format to this, you will need to adjust the transformation stage to match using the guide in 1.2.
+As standard, the pipeline for data to be transformed it assumes that genotype_id, location and rep feature before the traits. If your data is in a different format to this, you will need to adjust the transformation stage to match using the guide in 2.1.
 
-### 1.2 Transforming the data
+### 2.1 Transforming the data
 
 To transform the data, set ```runstats``` on line 11 to ```TRUE```. 
 
@@ -65,7 +65,7 @@ LMMmod<-lmer(trait~(1|location)*genotype_id, data = MyDataframe)
 
 If your data requires a different model, replace ```trait~(1|location)*genotype_id``` with the model of your choice. If the number of columns in your input data is therefore different from the format in 1.1, replace ```colno``` on line 12 with the number of columns that come before your first trait. For example, in the standard format there are 3 columns before the first trait and so ```colno = 3```.
 
-## Analyses 
+## 3 Analyses 
 
 
 [^Wang]: Wang J., Zhang Z. (2021) ‘GAPIT Version 3: Boosting Power and Accuracy for Genomic Association and Prediction, Genomics, Proteomics & Bioinformatics’, doi: https://doi.org/10.1016/j.gpb.2021.08.005.
