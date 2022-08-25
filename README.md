@@ -13,17 +13,17 @@ The design of the pipeline can be broken down into three stages: data organisati
 The pipeline runs within the folder it is stored in. To begin, place GAGA.R in the folder containing the data required by the pipeline. This should include:
 
 - the input data containing the traits to be run (more information on this is detailed in 1.1)
-- for GEM
-..- rpkm_AT2018in the .txt format
-..- Marker to At_AT2018 in the .csv format
+- data for GEM
+..* rpkm_AT2018in the .txt format
+..* Marker to At_AT2018 in the .csv format
 
-for GWAS
-..- q matrix in the .txt format
-..- SNP file in the .hmp.txt format
+- data for GWAS
+..* q matrix in the .txt format
+..* SNP file in the .hmp.txt format
 
-and for plotting
-..- DirectionsAC_AT2018 in the .tsv format
-..- Ath_Mapping in the .tsv format
+- and data for plotting
+..* DirectionsAC_AT2018 in the .tsv format
+..* Ath_Mapping in the .tsv format
 
 ### 1.1 Data input
 
