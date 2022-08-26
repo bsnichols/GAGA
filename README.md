@@ -25,8 +25,6 @@ The pipeline runs within the folder it is stored in. To begin, place GAGA.R in t
     * DirectionsAC_AT2018 in the .tsv format, with the prefix 'directions_'
     * Ath_Mapping in the .tsv format, with the prefix 'mapping_'
 
-__WHAT ARE THE OTHER FILES CALLED__
-
 Take a look at the demo data in this repo for how to name and format your data.
 
 When you open up GAGA.R, there are six variables you will need to manually set before running the pipeline. ```setwd()``` on line 10 requires you to put the path to the directory containing GAGA.R and the data files listed above. 
@@ -36,6 +34,26 @@ When you open up GAGA.R, there are six variables you will need to manually set b
 ```rungem``` runs the GEM analysis and ```rungwas``` runs the GWAS analysis and these need to be set to ```TRUE``` or ```FALSE``` depending on which you wish to run on your data. If you are running a GWAS, the ```gwasmodels``` should be adapted for the models you wish to run in GAPIT3[^Wang].
 
 To run the pipeline, ensure these variables are set and that the correct data files in the directory, and then the pipeline will automatically run when sourced.
+
+### 1.1 Installing GAPIT package
+
+This pipeline relies on GAPIT3. Documentation for how to install GAPIT3 can be found on the GAPIT website: https://zzlab.net/GAPIT/.
+
+I have found the best way to download it and its dependencies to be the following:
+
+```R
+install.packages("devtools")
+devtools::install_github("jiabowang/GAPIT3")
+library(GAPIT3)
+
+if (!require("BiocManager", quietly = TRUE))
+    install.packages("BiocManager")
+
+library(BiocManager)
+BiocManager::install("multtest")
+BiocManager::install("scatterplot3d")
+BiocManager::install("gplots")
+```
 
 ## 2 Data management
 
