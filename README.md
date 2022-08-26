@@ -67,9 +67,11 @@ LMMmod<-lmer(trait~(1|location)*genotype_id, data = MyDataframe)
 
 If your data requires a different model, replace ```trait~(1|location)*genotype_id``` with the model of your choice. If the number of columns in your input data is therefore different from the format in 2, replace ```colno``` on line 12 with the number of columns that come before your first trait. For example, in the format shown there are 3 columns (genotype_id, location and rep) before the first trait and so ```colno = 3```.
 
-## 3 Changing the colours of the Manhattan plots
+## 3 Manhattan plots
 
-The Manhattan plotter features twice within the code; once within the GEM analysis and once within the GWAS analysis. To change the colours of the Manhattan plots, you will need to alter ```Chrom_colors``` to the colours of your choice in both regions within the script. As standard, the Manhattan plots produce a rainbow Manhattan plot of multiple colours. 
+In the Manhattan plots, the significant Q-value threshold line is drawn in blue and the significant False Discovery Rate (FDR) is drawn in red.
+
+The Manhattan plotter features twice within the code; once within the GEM analysis and once within the GWAS analysis. To change the colours of points in the Manhattan plots, you will need to alter ```Chrom_colors``` to the colours of your choice in both regions within the script. As standard, the Manhattan plots produce a rainbow Manhattan plot of multiple colours. 
 
 [^Fell]: Fell, H., *et al.* (2022) "Novel gene loci associated with susceptibility or cryptic quantitative resistance to Pyrenopeziza brassicae in Brassica napus.", *preprint*.
 [^Wang]: Wang J., Zhang Z. (2021) ‘GAPIT Version 3: Boosting Power and Accuracy for Genomic Association and Prediction, Genomics, Proteomics & Bioinformatics’, doi: https://doi.org/10.1016/j.gpb.2021.08.005.
