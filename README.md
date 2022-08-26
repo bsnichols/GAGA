@@ -19,11 +19,11 @@ The pipeline runs within the folder it is stored in. To begin, place GAGA.R in t
     * q matrix in the .txt format, with the prefix 'qmatrix_'
     * SNP file in the .hmp.txt format, with the prefix 'snpfile_'
 - data for GEM (from Woolfenden, 2022[^Woolfenden])
-    * rpkm_AT2018 in the .txt format
-    * Marker to At_AT2018 in the .csv format
+    * rpkm_AT2018 in the .txt format, with the prefix 'unigenefile_'
+    * Marker to At_AT2018 in the .csv format, with the prefix 'marker_'
 - and data for plotting (from Woolfenden, 2022[^Woolfenden])
-    * DirectionsAC_AT2018 in the .tsv format
-    * Ath_Mapping in the .tsv format
+    * DirectionsAC_AT2018 in the .tsv format, with the prefix 'directions_'
+    * Ath_Mapping in the .tsv format, with the prefix 'mapping_'
 
 __WHAT ARE THE OTHER FILES CALLED__
 
