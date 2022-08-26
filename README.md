@@ -15,7 +15,7 @@ While the GEM analysis and plotter functions of the pipeline are currently confi
 The pipeline runs within the folder it is stored in. To begin, place GAGA.R in the folder containing the data required by the pipeline. This should include:
 
 - the trait input data in the .csv format, with the prefix 'totest_', containing the traits to be run (more information on this is detailed in 2)
-- data for GWAS
+- data for GWAS (Fell *et al.*, preprint[^Fell])
     * q matrix in the .txt format, with the prefix 'qmatrix_'
     * SNP file in the .hmp.txt format, with the prefix 'snpfile_'
 - data for GEM (from Woolfenden, 2022[^Woolfenden])
@@ -71,5 +71,6 @@ If your data requires a different model, replace ```trait~(1|location)*genotype_
 
 The Manhattan plotter features twice within the code; once within the GEM analysis and once within the GWAS analysis. To change the colours of the Manhattan plots, you will need to alter ```Chrom_colors``` to the colours of your choice in both regions within the script. As standard, the Manhattan plots produce a rainbow Manhattan plot of multiple colours. 
 
+[^Fell]: Fell, H., *et al.* (2022) "Novel gene loci associated with susceptibility or cryptic quantitative resistance to Pyrenopeziza brassicae in Brassica napus.", *preprint*.
 [^Wang]: Wang J., Zhang Z. (2021) ‘GAPIT Version 3: Boosting Power and Accuracy for Genomic Association and Prediction, Genomics, Proteomics & Bioinformatics’, doi: https://doi.org/10.1016/j.gpb.2021.08.005.
 [^Woolfenden]: Woolfenden, H. (2022) ‘Pyrenopeziz Resistance project’ Github repository, doi: https://doi.org/10.5281/zenodo.6546233.
