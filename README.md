@@ -6,7 +6,7 @@ The GAGA pipeline is an R package for GWAS And GEM Automisation. The pipeline ha
 
 In this repo you will find the  GAGA pipeline script, demo data and the documentation in this README file.
 
-![alt text](https://github.com/adam-p/markdown-here/raw/master/src/common/images/icon48.png "Flowchart")
+![alt text](https://github.com/bsnichols/GAGA/blob/main/pipeline_flowchart.png "Flowchart")
 
 The design of the pipeline can be broken down into three stages: data organisation, GEM analysis and GWAS analysis section. The pipeline is designed to take in either raw replicate data and transform it for analysis, or ready transformed data. The pipeline then performs a GEM analysis on the data and outputs a Manhattan plot. It then performs a GWAS using GAPIT and can be adjusted to run any of the models available in the GAPIT package. The best-fit model feature compares the results from the models run in the GWAS and outputs a Manhattan plot for the model that best fits the data. Outputs from the pipeline are organised into individual trait folders and an overview of all traits analysed is available to help quickly navigate the results.
 
