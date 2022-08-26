@@ -2,7 +2,7 @@
 
 Welcome to the GEM And GWAS Automisation (GAGA) Pipeline!
 
-The GAGA pipeline is an R package for GWAS And GEM Automisation. The pipeline has been designed to provide a user-friendly method of analysing multiple traits using both GEM and GWAS analysis automatically in hours. GAGA relies on the pre-existing GAPIT3 package to complete the GWAS analysis, and the GEM script developed by Woolfenden (2020). 
+The GAGA pipeline is an R package for GWAS And GEM Automisation. The pipeline has been designed to provide a user-friendly method of analysing multiple traits using both GEM and GWAS analysis automatically in hours. GAGA relies on the pre-existing GAPIT3 package[^Wang] to complete the GWAS analysis. 
 
 In this repo you will find the  GAGA pipeline script, demo data and the documentation in this README file.
 
