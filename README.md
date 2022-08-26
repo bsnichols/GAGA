@@ -1,4 +1,4 @@
-# The GAGA Pipeline
+# GAGA: a pipeline for GEM And GWAS Automation
 
 Welcome to the GEM And GWAS Automisation (GAGA) Pipeline!
 
