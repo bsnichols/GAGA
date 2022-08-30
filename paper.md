@@ -27,7 +27,7 @@ authors:
     orcid: 0000-0002-8497-7657
     equal-contrib: true 
     affiliation: 1
-  - name: Richard Morris
+  - name: Richard J. Morris
     orcid: 0000-0003-3080-2613
     equal-contrib: true 
     affiliation: 1
