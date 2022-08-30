@@ -48,6 +48,8 @@ date: 26 August 2022
 
 bibliography: paper.bib
 
+--
+
 # Summary
 
 Over the last decade, high-throughput phenotyping has transformed capabilities in the field and lab [@Mir]. The accuracy of high-throughput phenotyping methods has improved steadily, with new trait extraction techniques of increasing resolution being developed for spatial scales ranging from microscopic to whole canopy and field level. With this surge in trait extraction has come a backlog of genomic association analysis [@Nagy]. Traditionally, single traits are compared to genomic information such as gene expression or single nucleotide polymorphisms using Gene Expression Marker (GEM) analysis or Genome Wide Association Study (GWAS) analysis [@Chen]. As it can take several days to analyse a single trait using these methods, the phenotyping bottleneck has progressed from trait extraction from images to genomic association. While the tools to perform these association studies are readily available, the manual processing and decision-making required to carry out all associated steps can be time-consuming and relies on expert domain knowledge. Here, we describe an automated pipeline that carries out all associated steps from data processing to trait association and analysis without the need for human intervention.
