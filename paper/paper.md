@@ -35,7 +35,7 @@ authors:
     orcid: 0000-0002-1280-7472
     equal-contrib: true 
     affiliation: 1
- affiliations:
+affiliations:
   - name: John Innes Centre, UK
     index: 1
   - name: University College London, UK
