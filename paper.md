@@ -23,7 +23,7 @@ authors:
     orcid: 0000-0002-8423-5549
     equal-contrib: true 
     affiliation: 2
-  - name: Lars Østergard
+  - name: Lars Østergaard
     orcid: 0000-0002-8497-7657
     equal-contrib: true 
     affiliation: 1
