@@ -15,31 +15,31 @@ authors:
     orcid: 0000-0002-9800-7862
     equal-contrib: true 
     affiliation: 1
-- name: Jo Hepworth
+  - name: Jo Hepworth
     orcid: 0000-0002-4621-8414
     equal-contrib: true 
     affiliation: 1
-- name: Joshua Williams
+  - name: Joshua Williams
     orcid: 0000-0002-8423-5549
     equal-contrib: true 
     affiliation: 2
-- name: Lars Østergard
+  - name: Lars Østergard
     orcid: 0000-0002-8497-7657
     equal-contrib: true 
     affiliation: 1
-- name: Richard Morris
+  - name: Richard Morris
     orcid: 0000-0003-3080-2613
     equal-contrib: true 
     affiliation: 1
- - name: Rachel Wells
+  - name: Rachel Wells
     orcid: 0000-0002-1280-7472
     equal-contrib: true 
     affiliation: 1
 affiliations:
- - name: John Innes Centre, UK
-   index: 1
- - name: University College London, UK
-   index: 2
+  - name: John Innes Centre, UK
+    index: 1
+  - name: University College London, UK
+    index: 2
 date: 26 August 2022
 bibliography: paper.bib
 
@@ -54,7 +54,7 @@ We describe the `GAGA` pipeline for **G**EM **A**nd **G**WAS **A**utomation \aut
 
 GAGA implements practical domain knowledge to mimic the steps that would otherwise need to be performed manually. Running such an analysis manually requires an experienced researcher and can take several hours per trait. GAGA was developed to automate these steps for multiple traits. In the current version each trait takes between 20-40 minutes, depending on available processing power. The pipeline has been used in several *Brassica napus* phenotyping studies, including seed and pod analysis, branching patterns, flowering time and whole plant development at the John Innes Centre, the University of Nottingham, the University of Aberystwyth and Rothamsted Research. As the pipeline can process large numbers of traits automatically, this has enabled the rapid comparison of multiple disease association studies in *B. napus* [@Jacott], allowing an association of a region controlling disease resistance to be discovered which would likely have remained undetected using manual analysis methods. While the GEM aspect of the pipeline is currently configured for the A/C genome requirements of *B. napus*, this can be readily adapted for any species. 
 
-The source code for GAGA with documentation and demo data has been archived to Zenodo with the linked DOI: [LINK TO DOI]. 
+The source code for GAGA with documentation and demo data has been archived to Zenodo with the linked DOI: https://zenodo.org/badge/latestdoi/512807075.
 
 # Figures
 
