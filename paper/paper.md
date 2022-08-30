@@ -1,4 +1,5 @@
 ---
+
 title: 'GAGA: A pipeline for GEM and GWAS Automation'
 
 tags:
@@ -48,7 +49,7 @@ date: 26 August 2022
 
 bibliography: paper.bib
 
---
+---
 
 # Summary
 
