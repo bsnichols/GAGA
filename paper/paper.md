@@ -1,14 +1,11 @@
 ---
-
 title: 'GAGA: A pipeline for GEM and GWAS Automation'
-
 tags:
   - R
   - GWAS
   - GEM
   - Phenomics
   - Genomics
-
 authors:
   - name: Bethany S. Nichols
     orcid: 0000-0003-1280-2070
@@ -38,17 +35,13 @@ authors:
     orcid: 0000-0002-1280-7472
     equal-contrib: true 
     affiliation: 1
- 
  affiliations:
   - name: John Innes Centre, UK
     index: 1
   - name: University College London, UK
     index: 2
-
 date: 26 August 2022
-
 bibliography: paper.bib
-
 ---
 
 # Summary
