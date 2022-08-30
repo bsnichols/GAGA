@@ -27,7 +27,9 @@ The pipeline runs within the folder it is stored in. To begin, place GAGA.R in t
     * DirectionsAC_AT2018 in the .tsv format, with the prefix 'directions_'
     * Ath_Mapping in the .tsv format, with the prefix 'mapping_'
 
-Take a look at the demo data in this repo for how to name and format your data.
+The folder should also contain ```gapit.functions.txt``` which hosts the functions required for GAPIT to run.
+
+Take a look at the demo data in this repo for how to name and format your data. It will need to be unzipped locally.
 
 When you open up GAGA.R, there are six variables you will need to manually set before running the pipeline. ```setwd()``` on line 10 requires you to put the path to the directory containing GAGA.R and the data files listed above. 
 
