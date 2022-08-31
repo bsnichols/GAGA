@@ -8,8 +8,7 @@ rm(list = ls())
 ## Navigate to the Data folder containing the full trait dataset in the format
 ## demonstrated in the documentation.
 
-# setwd("~PATH/TO/YOUR/DIRECTORY")
-setwd("~/Documents/GAGA/demo/")
+setwd("~PATH/TO/YOUR/DIRECTORY")
 runstats <- TRUE
 colno <- 3
 rungem <- TRUE
@@ -184,6 +183,7 @@ for (j in 1:traitno) {
     # return(DataNormalisation)
     
   } else { # if runstats == FALSE renaming file for GEM and GWAS
+    traitname <- colnames(septraits)[j+colno]
     print(paste("No stats testing for ", traitname, "...", sep = ""))
     file.rename(paste("raw_", traitname,".txt", sep=""), "LMMestimatemeans.txt")
   }
@@ -193,13 +193,13 @@ for (j in 1:traitno) {
 trait.list <- dir(paste(masterfolder))
 
 # Checking trait folders created match trait names in input file
-traitnamesinseptraits <- sort(colnames(septraits[4:length(colnames(septraits))]))
+traitnamesinseptraits <- sort(colnames(septraits[seq(colno+1,length(colnames(septraits)))]))
 
 if (identical(traitnamesinseptraits, trait.list)){
-  print(paste("Traits successfully separated and organised in the folder, ", 
+  print(paste("Traits successfully separated and organised in the folder, ",
             masterfolder, ".", sep = ""))
 } else {
-  stop("There has been a problem setting up the trait folders. Please check the layout of your trait input file.")
+  stop("There has been a problem setting up the trait folders. Please check that you have set 'colno' to the correct length.")
 }
 
 ################################################################################
@@ -706,7 +706,7 @@ print("Running pipeline...")
 
 setwd(paste(masterfolder, sep = ""))
 
-for (trait in 1:length(trait.list)) {
+for (trait in seq(1,length(trait.list))) {
   
   print(paste("GEM analysis for ", trait.list[trait], " which is number ", trait, 
               " of ", length(trait.list), " traits.", sep = ""))
@@ -714,6 +714,8 @@ for (trait in 1:length(trait.list)) {
   setwd(paste(trait.list[trait], sep = ""))
   
   if (rungem == TRUE) {
+  print(paste("GEM analysis for ", trait.list[trait], " which is number ", trait, 
+                " of ", length(trait.list), " traits.", sep = ""))
   GEManalysis()
   }
   setwd("../")
@@ -724,7 +726,7 @@ if (rungem == TRUE) {
   
   GEMsig <- data.frame(Trait = NA, Number_of_significant_markers_by_P_value = NA)
   
-  for (sigfind2 in 1:length(trait.list)) {
+  for (sigfind2 in seq(1,length(trait.list))) {
     
     sigfinder2 <- read.csv(paste(trait.list[sigfind2], "/GEM_results_",trait.list[sigfind2], ".txt", sep=""))
     
@@ -748,14 +750,13 @@ if (rungem == TRUE) {
 }
 
 
-for (trait in 1:length(trait.list)) {
-  
-  print(paste("GWAS analysis for ", trait.list[trait], " which is number ", trait, 
-              " of ", length(trait.list), " traits.", sep = ""))
+for (trait in seq(1,length(trait.list))) {
   
   setwd(paste(trait.list[trait], sep = ""))
   
   if (rungwas == TRUE) {
+    print(paste("GWAS analysis for ", trait.list[trait], " which is number ", trait, 
+                " of ", length(trait.list), " traits.", sep = ""))
     GWASanalysis(gwasmodels = gwasmodels)
   }
   
@@ -768,7 +769,7 @@ if (rungwas == TRUE) {
   
   GAPITsig <- data.frame(Trait = NA, Model = NA, Marker = NA, P.value = NA, FDR = NA)
   
-  for (sigfind in 1:length(trait.list)) {
+  for (sigfind in seq(1,length(trait.list))) {
     
     sigfinder <- read.csv(paste(trait.list[sigfind], "/GAPIT_Significant_Markers.csv", sep=""))
     
